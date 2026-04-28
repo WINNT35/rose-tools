@@ -1,0 +1,47 @@
+<!-- Licensed under the GNU General Public License v2.0 or later. Copyright (C) 2026 WINNT35 -->
+<html>
+<head><title>About Rose Tools - Rose Tools Help</title></head>
+<link rel="stylesheet" href="style.css">
+<body>
+<h2>About Rose Tools</h2>
+
+<h4>Background</h4>
+<p>Rose Tools began as an effort to bring VMware guest services to the ReactOS
+community. Porting individual tools without a shared core proved unstable, so
+the decision was made to port open-vm-tools as a whole; providing a solid
+foundation that future components can build upon. The goal is to make ReactOS
+significantly more usable when running inside VMware virtual machines.</p>
+
+<h4>What Rose Tools Does</h4>
+<p>Version 0.1 is a proof of concept focused on establishing a working core
+rather than end-user features. It includes:</p>
+<ul>
+  <li><b>vmrosd.exe</b> — the Rose Tools daemon; loads plugins and manages
+  the RPC channel between the guest and VMware host.</li>
+  <li><b>checkvm.exe</b> — detects whether the system is running inside a
+  VMware virtual machine and reports the tools version.</li>
+  <li><b>Heartbeat</b> — signals to the VMware host that guest tools are
+  active and running.</li>
+  <li><b>GuestInfo</b> — periodically collects and reports guest system
+  information to the VMware host, including network configuration, OS
+  details, disk usage, and system statistics.</li>
+</ul>
+<p>While modest on the surface, v0.1 establishes the plugin architecture and
+core protocol layer that all future components will depend on. Currently
+tested on Windows XP (NT 5.1). See <a href="install.htm">Installation</a>
+for compatibility details.</p>
+
+<h4>What Rose Tools Does Not Do Yet</h4>
+<p>Features such as drag and drop, clipboard synchronization, and automatic
+display resizing are planned but not yet implemented. These will be
+introduced in future releases as plugins built on top of the v0.1 core.</p>
+
+<h4>Relationship to open-vm-tools</h4>
+<p>Rose Tools is derived from open-vm-tools. The guest protocol layer
+is preserved as closely as possible, modified only where necessary for
+Windows NT compatibility. The core carries no dependency on GLib. While the
+protocol and core libraries are largely derived from upstream, the outer ring
+(the services and executables) is written from scratch for the Win32 API.</p>
+
+</body>
+</html>

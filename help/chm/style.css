@@ -1,0 +1,10 @@
+/* Licensed under the GNU General Public License v2.0 or later. Copyright (C) 2026 WINNT35 */
+body {
+  font-family: Tahoma, Arial, sans-serif;
+  font-size: 13px;
+}
+h1, h2, h3, h4 {
+  font-family: "Times New Roman", Times, serif;
+}
+a         { color: #CC9900; }
+a:active  { color: #FF0000; }

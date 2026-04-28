@@ -1,0 +1,62 @@
+<!-- Licensed under the GNU General Public License v2.0 or later. Copyright (C) 2026 WINNT35 -->
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<BODY>
+<UL>
+  <LI><OBJECT type="text/sitemap">
+    <param name="Name" value="Start Page">
+    <param name="Local" value="main.htm">
+    <param name="ImageNumber" value="11">
+  </OBJECT>
+  <LI><OBJECT type="text/sitemap">
+    <param name="Name" value="General Information">
+    <param name="Local" value="general.htm">
+    <param name="ImageNumber" value="1">
+  </OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap">
+      <param name="Name" value="About">
+      <param name="Local" value="about.htm">
+      <param name="ImageNumber" value="11">
+    </OBJECT>
+    <LI><OBJECT type="text/sitemap">
+      <param name="Name" value="Installation">
+      <param name="Local" value="install.htm">
+      <param name="ImageNumber" value="11">
+    </OBJECT>
+    <LI><OBJECT type="text/sitemap">
+      <param name="Name" value="License">
+      <param name="Local" value="license.htm">
+      <param name="ImageNumber" value="11">
+    </OBJECT>
+    <LI><OBJECT type="text/sitemap">
+      <param name="Name" value="Thanks">
+      <param name="Local" value="thanks.htm">
+      <param name="ImageNumber" value="11">
+    </OBJECT>
+    <LI><OBJECT type="text/sitemap">
+      <param name="Name" value="Contributing">
+      <param name="Local" value="contributing.htm">
+      <param name="ImageNumber" value="11">
+    </OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap">
+    <param name="Name" value="Changelog">
+    <param name="Local" value="changelog.htm">
+    <param name="ImageNumber" value="1">
+  </OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap">
+      <param name="Name" value="v0.1">
+      <param name="Local" value="changelog_01.htm">
+      <param name="ImageNumber" value="11">
+    </OBJECT>
+    <LI><OBJECT type="text/sitemap">
+      <param name="Name" value="Future Releases">
+      <param name="Local" value="changelog_future.htm">
+      <param name="ImageNumber" value="11">
+    </OBJECT>
+  </UL>
+</UL>
+</BODY>
+</HTML>

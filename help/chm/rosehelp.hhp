@@ -1,0 +1,20 @@
+[OPTIONS]
+Title=Rose Tools
+Default topic=main.htm
+Compiled file=rosehelp.chm
+Contents file=rosehelp.hhc
+Index file=rosehelp.hhk
+Full-text search=Yes
+
+[FILES]
+main.htm
+general.htm
+about.htm
+install.htm
+license.htm
+thanks.htm
+contributing.htm
+changelog.htm
+changelog_01.htm
+changelog_future.htm
+style.css

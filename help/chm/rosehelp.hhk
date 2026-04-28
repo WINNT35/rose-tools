@@ -1,0 +1,155 @@
+<!-- Licensed under the GNU General Public License v2.0 or later. Copyright (C) 2026 WINNT35 -->
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+</HEAD>
+<BODY>
+<UL>
+  <LI><OBJECT type="text/sitemap">
+    <param name="Name" value="backdoor">
+    <param name="Local" value="about.htm">
+  </OBJECT>
+  <LI><OBJECT type="text/sitemap">
+    <param name="Name" value="bug report">
+    <param name="Local" value="install.htm">
+  </OBJECT>
+  <LI><OBJECT type="text/sitemap">
+    <param name="Name" value="C89">
+    <param name="Local" value="contributing.htm">
+  </OBJECT>
+  <LI><OBJECT type="text/sitemap">
+    <param name="Name" value="changelog">
+    <param name="Local" value="changelog.htm">
+  </OBJECT>
+  <LI><OBJECT type="text/sitemap">
+    <param name="Name" value="checkvm">
+    <param name="Local" value="install.htm">
+  </OBJECT>
+  <LI><OBJECT type="text/sitemap">
+    <param name="Name" value="compatibility">
+    <param name="Local" value="install.htm">
+  </OBJECT>
+  <LI><OBJECT type="text/sitemap">
+    <param name="Name" value="contributing">
+    <param name="Local" value="contributing.htm">
+  </OBJECT>
+  <LI><OBJECT type="text/sitemap">
+    <param name="Name" value="copyright">
+    <param name="Local" value="license.htm">
+  </OBJECT>
+  <LI><OBJECT type="text/sitemap">
+    <param name="Name" value="core">
+    <param name="Local" value="contributing.htm">
+  </OBJECT>
+  <LI><OBJECT type="text/sitemap">
+    <param name="Name" value="forking">
+    <param name="Local" value="license.htm">
+  </OBJECT>
+  <LI><OBJECT type="text/sitemap">
+    <param name="Name" value="GPL">
+    <param name="Local" value="license.htm">
+  </OBJECT>
+  <LI><OBJECT type="text/sitemap">
+    <param name="Name" value="guest">
+    <param name="Local" value="about.htm">
+  </OBJECT>
+  <LI><OBJECT type="text/sitemap">
+    <param name="Name" value="guestInfo">
+    <param name="Local" value="about.htm">
+  </OBJECT>
+  <LI><OBJECT type="text/sitemap">
+    <param name="Name" value="heartbeat">
+    <param name="Local" value="about.htm">
+  </OBJECT>
+  <LI><OBJECT type="text/sitemap">
+    <param name="Name" value="host">
+    <param name="Local" value="about.htm">
+  </OBJECT>
+  <LI><OBJECT type="text/sitemap">
+    <param name="Name" value="installation">
+    <param name="Local" value="install.htm">
+  </OBJECT>
+  <LI><OBJECT type="text/sitemap">
+    <param name="Name" value="lib">
+    <param name="Local" value="contributing.htm">
+  </OBJECT>
+  <LI><OBJECT type="text/sitemap">
+    <param name="Name" value="license">
+    <param name="Local" value="license.htm">
+  </OBJECT>
+  <LI><OBJECT type="text/sitemap">
+    <param name="Name" value="LGPL">
+    <param name="Local" value="license.htm">
+  </OBJECT>
+  <LI><OBJECT type="text/sitemap">
+    <param name="Name" value="MinGW">
+    <param name="Local" value="contributing.htm">
+  </OBJECT>
+  <LI><OBJECT type="text/sitemap">
+    <param name="Name" value="open source">
+    <param name="Local" value="license.htm">
+  </OBJECT>
+  <LI><OBJECT type="text/sitemap">
+    <param name="Name" value="open-vm-tools">
+    <param name="Local" value="about.htm">
+  </OBJECT>
+  <LI><OBJECT type="text/sitemap">
+    <param name="Name" value="outer ring">
+    <param name="Local" value="contributing.htm">
+  </OBJECT>
+  <LI><OBJECT type="text/sitemap">
+    <param name="Name" value="plugin">
+    <param name="Local" value="contributing.htm">
+  </OBJECT>
+  <LI><OBJECT type="text/sitemap">
+    <param name="Name" value="ReactOS">
+    <param name="Local" value="about.htm">
+  </OBJECT>
+  <LI><OBJECT type="text/sitemap">
+    <param name="Name" value="RPC">
+    <param name="Local" value="about.htm">
+  </OBJECT>
+  <LI><OBJECT type="text/sitemap">
+    <param name="Name" value="RPCI">
+    <param name="Local" value="about.htm">
+  </OBJECT>
+  <LI><OBJECT type="text/sitemap">
+    <param name="Name" value="services">
+    <param name="Local" value="contributing.htm">
+  </OBJECT>
+  <LI><OBJECT type="text/sitemap">
+    <param name="Name" value="thanks">
+    <param name="Local" value="thanks.htm">
+  </OBJECT>
+  <LI><OBJECT type="text/sitemap">
+    <param name="Name" value="troubleshooting">
+    <param name="Local" value="install.htm">
+  </OBJECT>
+  <LI><OBJECT type="text/sitemap">
+    <param name="Name" value="v0.1">
+    <param name="Local" value="changelog_01.htm">
+  </OBJECT>
+  <LI><OBJECT type="text/sitemap">
+    <param name="Name" value="v0.2">
+    <param name="Local" value="changelog_future.htm">
+  </OBJECT>
+  <LI><OBJECT type="text/sitemap">
+    <param name="Name" value="VMware">
+    <param name="Local" value="about.htm">
+  </OBJECT>
+  <LI><OBJECT type="text/sitemap">
+    <param name="Name" value="VMware Tools">
+    <param name="Local" value="about.htm">
+  </OBJECT>
+  <LI><OBJECT type="text/sitemap">
+    <param name="Name" value="vmrosd">
+    <param name="Local" value="install.htm">
+  </OBJECT>
+  <LI><OBJECT type="text/sitemap">
+    <param name="Name" value="Windows XP">
+    <param name="Local" value="install.htm">
+  </OBJECT>
+</UL>
+</BODY>
+</HTML>

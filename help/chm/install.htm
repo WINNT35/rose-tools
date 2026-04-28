@@ -1,0 +1,51 @@
+<!-- Licensed under the GNU General Public License v2.0 or later. Copyright (C) 2026 WINNT35 -->
+<html>
+<head>
+<title>Installation - Rose Tools Help</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h2>Installation</h2>
+<p>Rose Tools v0.1 requires no installation. Both executables can be run
+directly from the command prompt.</p>
+
+<h3>Running vmrosd.exe</h3>
+<p>Launch <b>vmrosd.exe</b> from the command prompt. If Rose Tools is
+functioning correctly, you should see the following message:</p>
+<blockquote><tt>pluginMgr: plugin 'guestInfo' loaded.</tt></blockquote>
+<p>Additionally, the primary IP address of your virtual machine should
+appear in VMware's console view.</p>
+
+<h3>Running checkvm.exe</h3>
+<p>Launch <b>checkvm.exe</b> from the command prompt. If Rose Tools is
+functioning correctly inside a VMware virtual machine, you should see:</p>
+<blockquote><tt>VMware software version 6 (good)</tt></blockquote>
+<p>If you are running <b>checkvm.exe</b> outside of a VMware virtual
+machine, the following message is expected and indicates correct
+behavior:</p>
+<blockquote><tt>Not running inside a VMware virtual machine.</tt></blockquote>
+<p>You can also run <b>checkvm.exe</b> with the <tt>-p</tt> flag to print
+the product name of the detected VMware platform:</p>
+<blockquote><tt>checkvm.exe -p</tt></blockquote>
+<p>This will print one of the following; <tt>VMware Workstation</tt>,
+<tt>VMware ESX Server</tt>, or <tt>Unknown</tt>.</p>
+
+<h3>Troubleshooting</h3>
+<p>If either executable does not produce the expected output, please submit
+an issue on the GitHub repository. Include the following details in your
+report:</p>
+<ul>
+  <li>VMware version</li>
+  <li>Whether you are running a lower hardware compatibility mode</li>
+  <li>The exact output or error message you received</li>
+</ul>
+
+<h3>Compatibility</h3>
+<p>Rose Tools v0.1 has been tested on Windows XP Media Center Edition 2005
+SP3 (NT 5.1) 32-bit under VMware Workstation. Support for ReactOS,
+Windows NT 4.0, Windows NT 3.51, and 64-bit guests is planned for a
+future release.</p>
+<p><i>Note: a graphical installer is planned for a future release.</i></p>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!-- Licensed under the GNU General Public License v2.0 or later. Copyright (C) 2026 WINNT35 -->
+<html>
+<head><title>Contributing - Rose Tools Help</title></head>
+<link rel="stylesheet" href="style.css">
+<body>
+<h2>Contributing</h2>
+<p>Rose Tools welcomes contributions from the community. This page provides
+a brief overview of the project structure, coding standards, and licensing
+requirements for contributors.</p>
+
+<h3>Build Requirements</h3>
+<ul>
+  <li>MinGW (GCC for Windows)</li>
+  <li>C89 compatible compiler</li>
+  <li>Windows XP or ReactOS (for testing)</li>
+</ul>
+
+<h3>Coding Standards</h3>
+<p>The preferred standard for Rose Tools is C89, particularly for the
+outer ring. This ensures compatibility with older toolchains and keeps
+the codebase consistent with the project's targets. Contributions should
+follow C89 where practical:</p>
+<ul>
+  <li>Prefer <tt>/* */</tt> block comments over <tt>//</tt></li>
+  <li>Declare variables at the top of a block where possible</li>
+  <li>No GLib or other Unix-specific dependencies</li>
+  <li>Win32 API only for platform-specific code</li>
+</ul>
+
+<h3>Project Structure</h3>
+<p>Rose Tools is primarily divided into two distinct layers:</p>
+<ul>
+  <li><b>lib/</b> — the core; contains the guest protocol implementation
+  and shared libraries. This layer is heavily derived from open-vm-tools
+  and should be modified as little as possible. Changes here should only
+  be made where strictly necessary for Windows NT compatibility.</li>
+  <li><b>services/</b> — the outer ring; contains the daemon, utilities,
+  and plugins. This is where the majority of new development takes place.
+  New features should be implemented as plugins under
+  <tt>services/plugins/</tt> wherever possible.</li>
+</ul>
+<p>When in doubt, ask yourself whether your code belongs to the protocol
+and core infrastructure (lib/) or to the services and tools built on top
+of it (services/). Keep the two layers cleanly separated.</p>
+
+<h3>Writing a Plugin</h3>
+<p>New features should be implemented as plugins loaded by vmrosd.exe
+rather than standalone executables or modifications to the daemon itself.
+This keeps vmrosd.exe stable and makes features independently
+maintainable. Refer to the existing guestInfo plugin as a reference
+implementation.</p>
+
+<h3>Licensing</h3>
+<p>All contributions must use the correct license for their layer:</p>
+<ul>
+  <li><b>lib/</b> — GNU Lesser General Public License v2.1 only</li>
+  <li><b>services/</b> — GNU General Public License v2.0 or later</li>
+</ul>
+<p>Every source file must include the appropriate license header. See
+existing files for the correct header format. If a layer is not mentioned
+please refer to the "COPYING" file inside that folder.</p>
+
+<h3>Getting Involved</h3>
+<p>Bug reports, feature requests, and pull requests are welcome on the
+GitHub repository. When submitting a bug report please include your
+VMware version, hardware compatibility mode, and the exact output or
+error message you received.</p>
+
+</body>
+</html>
