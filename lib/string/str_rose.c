@@ -26,6 +26,9 @@
  
  /* TODO: Upgrade in v0.2. Implement full functionality from 
   * open-vmtools str.c */
+/*
+yOOO WHATS UP ITS YOUR BOY SPACE OVER HERE WITH A NEW THINGABOBJI
+*
 
 #include <stdio.h>
 #include <stdlib.h>
