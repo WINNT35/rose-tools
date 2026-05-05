@@ -1,0 +1,92 @@
+<!-- Licensed under the MIT License. Copyright (C) 2026 WINNT35 -->
+<html>
+<head>
+<title>v0.2 - Rose Tools Help</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h2>v0.2 &mdash; 2026-05-05</h2>
+<p>v0.2 is a significant upgrade to Rose Tools. The plugin architecture has
+been overhauled to use dynamic DLLs, a clean plugin API, a proper RPC channel,
+and built-in configuration support, laying the groundwork for easy plugin
+development and making it straightforward to extend Rose Tools with new
+functionality. vmrosd.exe can now run as a Windows service, and a
+configuration file gives users control over how Rose Tools behaves. Two new
+plugins are introduced: timeSync, which keeps the guest clock in sync with
+the host, and resolutionSet, which allows the VMware window to resize the
+guest display. The license structure has also been audited and updated to
+correctly reflect open-vm-tools attribution.</p>
+
+<h4>Automatic Resolution</h4>
+<p>A new plugin, <b>resolutionSet</b>, advertises the <b>resolution_server</b>
+capability to the VMware host which tells the host that the guest can
+receive and apply resolution changes as well as handling the Resolution_Set
+command, calling ChangeDisplaySettings to apply the new resolution when the
+VMware window is resized. resolutionSet is disabled by default and must be
+enabled via tools.conf. See the User Guide for details. Note that arbitrary
+resolutions require direct communication with the VMware SVGA display
+driver. This is not yet possible without a native rose-tools display driver,
+which is planned for a future release. Standard VGA is limited to fixed
+modes only. On ReactOS, ChangeDisplaySettings rounds to the nearest
+supported mode rather than returning an error for unsupported resolutions;
+this behavior differs on Windows.</p>
+
+<h4>Time Synchronization</h4>
+<p>A new plugin, <b>timeSync</b>, synchronizes the guest system clock with
+the VMware host by reading the host time via the backdoor channel and
+applying corrections using SetSystemTime. Corrections are stepped in both
+directions: if the guest clock is ahead or behind by more than one second,
+it is corrected immediately. Only the system clock is synchronized; the
+timezone is not affected. Gradual clock correction (slewing) is planned
+for a future release.</p>
+
+<h4>Architecture</h4>
+<p>Rose Tools now uses a dynamic plugin architecture. Plugins are built as
+DLLs and loaded at startup from the plugins\vmsvc\ directory, making it
+significantly easier to develop and distribute new plugins without modifying
+the core. The existing <b>guestInfo</b> plugin has been converted to a DLL
+as part of this transition.</p>
+
+<h4>Service Registration</h4>
+<p><b>vmrosd.exe</b> now integrates with the Windows Service Control Manager
+(SCM). The same binary can be run interactively for testing or registered as
+an automatic service that starts with Windows. See the User Guide for
+registration instructions.</p>
+
+<h4>Configuration File</h4>
+<p>Rose Tools now reads a configuration file, <b>tools.conf</b>, located at
+C:\Program Files\VMware\Rose Tools\tools.conf. The file uses a simple INI
+format with sections and key=value pairs, and can be used to change how Rose
+Tools behaves: including enabling plugins that are disabled by default,
+overriding the plugin directory, and bypassing the VMware Tools conflict
+check. If no configuration file is found, all defaults apply and a message
+is printed at startup. See the User Guide for details.</p>
+
+<h4>VMware Tools Detection</h4>
+<p>Rose Tools now detects whether VMware Tools is already installed on the
+guest and will refuse to start if it is, preventing conflicts. This check
+runs before anything else at startup. See the User Guide for details,
+including how to bypass this check if needed.</p>
+
+<h4>RPC Channel</h4>
+<p>The RPC channel has had a significant overhaul. The inbound channel
+(RpcIn), which handles commands sent from the VMware host to the guest,
+is now a proper separate channel imported from open-vm-tools with its own
+lifecycle. In v0.1 inbound RPC was partially implemented inside the
+outbound channel and could not properly receive or dispatch host commands.
+Plugins can now register handlers for host commands directly. The outbound
+channel (rpcChannel_rose) has also been cleaned up and is now properly
+independent from the inbound channel.</p>
+
+<h4>Licensing</h4>
+<p>Following an audit of the source tree, several files were found to be
+sufficiently derivative of open-vm-tools to warrant dual attribution and a
+license change from GPL-2.0-or-later to LGPL-2.1-only: mainLoop.c,
+toolsRpc.c, and guestInfo.c. The license headers in these files now credit
+both VMware, Inc. and WINNT35. The license structure is significantly more
+nuanced than in v0.1 and is no longer a simple split by directory. The
+help/ documentation has been relicensed from GPL-2.0-or-later to MIT. See
+the License page for the full breakdown.</p>
+
+</body>
+</html>

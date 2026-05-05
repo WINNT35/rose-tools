@@ -1,0 +1,77 @@
+<!-- Licensed under the MIT License. Copyright (C) 2026 WINNT35 -->
+<html>
+<head>
+<title>License - Rose Tools Help</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<h2>License</h2>
+<p>Rose Tools as a whole is distributed under the GNU General Public License
+v2.0 or later. A copy of this license can be found in the GitHub repository
+at <tt>LICENSE</tt>.</p>
+
+<p>Individual components may carry a different license depending on their
+origin. The license structure is more nuanced than a simple directory split;
+always refer to the license header of the individual source file or the
+<tt>COPYING</tt> file within the relevant directory. The general breakdown
+is as follows:</p>
+
+<ul>
+  <li><b>lib/</b> &mdash; GNU Lesser General Public License v2.1 only</li>
+  <li><b>services/</b> &mdash; GNU General Public License v2.0 or later;
+  files that are sufficiently derivative of open-vm-tools carry dual
+  attribution to VMware, Inc. and WINNT35 and are licensed under LGPL
+  v2.1 only instead</li>
+  <li><b>tests/</b> &mdash; GNU General Public License v2.0 or later</li>
+  <li><b>help/</b> &mdash; MIT License</li>
+</ul>
+
+<p>When in doubt, refer to the COPYING file in the relevant directory or
+the license header of the individual source file. The headers are
+authoritative.</p>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Do I as an end user have any obligations?</h4>
+<p>For most users, no. If you are simply running or sharing Rose Tools
+unmodified, you have no obligations to worry about. If you modify the
+source code and distribute your changes, standard GPL terms apply;
+but this only affects developers who are actively changing and
+redistributing the software, not regular users. Rose Tools is free and
+open source software provided at no charge. If you paid for this software,
+it was likely redistributed without added value.</p>
+
+<h4>Can I use source code in my own project?</h4>
+<p>It depends on the specific file. Several files in lib/ and parts of
+services/ are licensed under LGPL v2.1 only, which permits use in your
+own project including proprietary projects, provided that any modifications
+you make to those files themselves are released under the LGPL v2.1. You
+are not required to license your entire project under the LGPL. Files
+licensed under GPL v2.0 or later carry stricter terms and require the
+combined work to be distributed under the GPL. Always check the individual
+file header before incorporating any component into your own project.</p>
+
+<h4>Does the LGPL affect the license of the rest of Rose Tools?</h4>
+<p>No. The LGPL v2.1 only requires that modifications to the LGPL-licensed
+files themselves remain under the LGPL. Code that uses those files is free
+to use a different license, which is why the overall project can be
+distributed as GPL v2.0 or later. This is the intended use case of the
+LGPL and why it exists as a distinct license from the GPL.</p>
+
+<h4>What are my obligations if I fork Rose Tools?</h4>
+<p>If you fork Rose Tools and distribute it, the GPL requires that you make
+the complete source code publicly available under the same terms and you
+must preserve all existing license notices. Each component may carry a
+different license; always check the license header of the individual file
+or the COPYING file in the relevant directory. You may not relicense any
+component without the consent of the copyright holders. However, the
+combined work as a whole may be distributed under a later version of the
+GPL, such as GPL v3.0.</p>
+
+<h4>Where can I find the full license texts?</h4>
+<p>The full license texts are available in the GitHub repository. Each
+component directory contains a COPYING file with the relevant license
+text. The root LICENSE file covers the project as a whole.</p>
+
+</body>
+</html>

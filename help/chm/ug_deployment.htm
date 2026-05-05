@@ -1,0 +1,75 @@
+<!-- Licensed under the MIT License. Copyright (C) 2026 WINNT35 -->
+<html>
+<head>
+<title>Deployment - Rose Tools Help</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h2>Deployment</h2>
+<p>Rose Tools v0.2 does not include an installer. Files must be copied
+manually to the correct locations. An installer is planned for v0.3.</p>
+
+<h4>Directory Layout</h4>
+<p>Create the following directory structure under Program Files. The
+directory name and layout must be exact, as vmrosd.exe expects plugins
+at a specific path by default.</p>
+
+<pre>
+C:\Program Files\VMware\Rose Tools\
+    vmrosd.exe
+    tools.conf          (optional, create if needed)
+    plugins\
+        vmsvc\
+            guestInfo.dll
+            timeSync.dll
+            resolutionSet.dll
+</pre>
+
+<h4>Copying the Files</h4>
+<p>Copy the <b>VMware</b> folder from the Rose Tools release into
+<tt>C:\Program Files\</tt>. The resulting path should be
+<tt>C:\Program Files\VMware\Rose Tools\</tt>. The plugins folder must
+also be present with the DLLs in place before vmrosd.exe is started,
+otherwise the plugin manager will find nothing to load.</p>
+
+<h4>First Run</h4>
+<p>Before registering Rose Tools as a service, run <b>vmrosd.exe</b>
+directly from the command line to confirm everything is working. A
+successful startup looks like this:</p>
+
+<pre>
+v0.2 (interactive mode)
+vmrosd: no config file found, using defaults.
+pluginMgr: loading plugins from: C:\Program Files\VMware\Rose Tools\plugins\vmsvc
+pluginMgr: plugin 'guestInfo' loaded.
+pluginMgr: plugin 'timeSync' loaded.
+resolutionSet: Disabled. See documentation to learn more.
+vmrosd: 2 plugin(s) loaded, entering main loop.
+
+--- rose-tools v0.2 self-test ---
+  VMware detected:          PASS
+  RPC channel opened:       PASS
+  Version sent to VMX:      PASS
+  TCLO reset received:      PASS
+  Capabilities registered:  PASS
+  Plugin(s) loaded:         PASS
+  Heartbeat loop running:   PASS
+---------------------------------
+Congratulations, v0.2 works as expected.
+</pre>
+
+<p>The banner <b>v0.2 (interactive mode)</b> confirms that vmrosd.exe
+was launched directly rather than by the Windows Service Control Manager.
+Once you have confirmed the self-test passes, proceed to
+<a href="ug_service.htm">Service Registration</a> to install Rose Tools
+as an automatic service.</p>
+
+<h4>VMware Tools Conflict</h4>
+<p>If VMware Tools is already installed on the guest, vmrosd.exe will
+detect it and refuse to start. Remove VMware Tools before deploying
+Rose Tools. If you need to run both, see the
+<a href="ug_config.htm">Configuration File</a> page for the override
+option.</p>
+
+</body>
+</html>

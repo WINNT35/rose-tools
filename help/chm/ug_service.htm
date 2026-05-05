@@ -1,0 +1,57 @@
+<!-- Licensed under the MIT License. Copyright (C) 2026 WINNT35 -->
+<html>
+<head>
+<title>Service Registration - Rose Tools Help</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h2>Service Registration</h2>
+<p>Rose Tools can run as a Windows service that starts automatically with
+Windows. The same <b>vmrosd.exe</b> binary handles both interactive and
+service mode. Before registering as a service, confirm that Rose Tools
+works correctly in interactive mode first. See
+<a href="ug_deployment.htm">Deployment</a> for details.</p>
+
+<h4>Registering the Service</h4>
+<p>Open a command prompt with sufficient permissions and run the following command:</p>
+
+<pre>
+sc create rose-tools binPath= "C:\Program Files\VMware\Rose Tools\vmrosd.exe" DisplayName= "Rose Tools" start= auto
+</pre>
+
+<p>Note that <tt>sc</tt> requires a space between each parameter name and
+its value (e.g. <tt>binPath=</tt> followed by a space, then the path).
+Omitting these spaces is a common source of errors.</p>
+
+<h4>Starting and Stopping the Service</h4>
+<p>To start the service immediately without rebooting:</p>
+<pre>
+sc start rose-tools
+</pre>
+
+<p>To stop the service:</p>
+<pre>
+sc stop rose-tools
+</pre>
+
+<h4>Removing the Service</h4>
+<p>To unregister Rose Tools from the SCM, stop the service first and
+then delete it:</p>
+<pre>
+sc stop rose-tools
+sc delete rose-tools
+</pre>
+
+<h4>Verifying the Service is Running</h4>
+<p>To check the current status of the service:</p>
+<pre>
+sc query rose-tools
+</pre>
+
+<p>A running service will show <tt>STATE: 4 RUNNING</tt>. If the service
+fails to start, run vmrosd.exe interactively first to check for errors.
+The most common cause is a VMware Tools conflict; see the
+<a href="ug_config.htm">Configuration File</a> page for details.</p>
+
+</body>
+</html>

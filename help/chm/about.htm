@@ -1,0 +1,38 @@
+<!-- Licensed under the MIT License. Copyright (C) 2026 WINNT35 -->
+<html>
+<head><title>About Rose Tools - Rose Tools Help</title></head>
+<link rel="stylesheet" href="style.css">
+<body>
+<h2>About Rose Tools</h2>
+
+<h4>Background</h4>
+<p>Rose Tools began as an effort to bring VMware guest services to the ReactOS
+community. Porting individual tools without a shared core proved unstable, so
+the decision was made to port open-vm-tools as a whole; providing a solid
+foundation that future components can build upon. The goal is to make ReactOS
+significantly more usable when running inside VMware virtual machines.</p>
+
+<h4>What Rose Tools Does</h4>
+<p>Rose Tools v0.2 builds on the v0.1 core with a significantly expanded
+feature set. <b>vmrosd.exe</b> now runs as a Windows service and loads
+plugins dynamically from a configurable directory. Two new plugins are
+included: <b>timeSync</b>, which keeps the guest clock synchronized with
+the VMware host, and <b>resolutionSet</b>, which allows the VMware window
+to resize the guest display. <b>checkvm.exe</b> continues to provide
+standalone VM detection. Rose Tools has been tested on Windows XP and
+ReactOS. See the <a href="userguide.htm">User Guide</a> for deployment
+instructions.</p>
+
+<p><a href="changelog_future.htm">Click here to see planned features.</a></p>
+
+<h4>Relationship to open-vm-tools</h4>
+<p>Rose Tools is derived from open-vm-tools. The guest protocol layer is
+preserved as closely as possible, modified only where necessary for Windows
+NT compatibility, with no dependency on GLib. The core libraries are largely
+derived from upstream. The outer ring is primarily original Win32 code,
+though several files are closely based on upstream open-vm-tools and carry
+dual attribution accordingly. See the <a href="license.htm">License</a>
+page for the full breakdown.</p>
+
+</body>
+</html>

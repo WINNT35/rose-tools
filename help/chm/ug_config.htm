@@ -1,0 +1,84 @@
+<!-- Licensed under the MIT License. Copyright (C) 2026 WINNT35 -->
+<html>
+<head>
+<title>Configuration File - Rose Tools Help</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h2>Configuration File</h2>
+<p>Rose Tools reads an optional configuration file, <b>tools.conf</b>,
+located at <tt>C:\Program Files\VMware\Rose Tools\tools.conf</tt>. If the
+file is not found, all defaults apply and a message is printed at startup.
+The configuration path is hardcoded in v0.2; a registry-based path and
+<tt>--config</tt> flag are planned for v0.3.</p>
+
+<h4>Format</h4>
+<p>tools.conf uses a simple INI format. Sections are declared with a name
+in square brackets. Keys and values are separated by an equals sign.
+Lines beginning with <tt>#</tt> or <tt>;</tt> are comments and are
+ignored. Whitespace around keys and values is stripped. Section and key
+names are case sensitive and must be written exactly as shown. An
+example:</p>
+
+<pre>
+# This is a comment
+[vmtools]
+ignore_vmware_tools=true
+
+[resolutionset]
+enable=true
+</pre>
+
+<h4>Supported Keys</h4>
+
+<p><b>[vmtools]</b></p>
+<p><tt>ignore_vmware_tools</tt> (true/false, default: false) &mdash;
+By default, Rose Tools will refuse to start if a VMware Tools installation
+is detected. This is because both Rose Tools and VMware Tools use the same
+VMware RPC channel, and if VMware Tools is already running, vmrosd will
+almost certainly fail to initialize. Detection works by checking whether
+<tt>C:\Program Files\VMware\VMware Tools</tt> exists. This check will be
+made more sophisticated in a future release. Set this to true to bypass it,
+but expect vmrosd to fail unless VMware Tools is not actively running.</p>
+
+<p><tt>plugin_dir</tt> (path, default: <tt>C:\Program Files\VMware\Rose Tools\plugins\vmsvc</tt>)
+&mdash; Overrides the directory that the plugin manager scans for DLLs.
+Useful if you want to keep plugins in a non-standard location.</p>
+
+<p><b>[resolutionset]</b></p>
+<p><tt>enable</tt> (true/false, default: false) &mdash; Enables the
+resolutionSet plugin, which allows the VMware window to resize the guest
+display. Disabled by default. Note that arbitrary resolutions require a
+native rose-tools display driver, which is planned for a future release.
+See the <a href="changelog_02.htm">v0.2 changelog</a> for details.</p>
+
+<p><b>[timesync]</b></p>
+<p><tt>disable</tt> (true/false, default: false) &mdash; Disables all
+time synchronization.</p>
+
+<p><tt>disablePeriodic</tt> (true/false, default: false) &mdash; Disables
+periodic time synchronization only. The clock will still be corrected on
+resume from suspend.</p>
+
+<p>Note: guestInfo does not currently have a configuration key and cannot
+be disabled. A future release will make all plugins individually
+configurable; in the meantime, removing guestInfo.dll from the plugins
+directory will prevent it from loading, but this is not recommended as
+Rose Tools depends on it for basic host communication.</p>
+
+<h4>Example File</h4>
+<pre>
+[vmtools]
+ignore_vmware_tools=false
+plugin_dir=C:\Program Files\VMware\Rose Tools\plugins\vmsvc
+
+[resolutionset]
+enable=true
+
+[timesync]
+disable=false
+disablePeriodic=false
+</pre>
+
+</body>
+</html>
